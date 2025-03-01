@@ -1,6 +1,7 @@
 // Deck.java
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 class Deck {
  // Create an ArrayList of "Card" type called deck
@@ -70,4 +71,12 @@ class Deck {
   return false;
  }
 
+ // Deal 5 random cards from the deck
+ public void dealCard() {
+  System.out.println("Dealing 5 random cards:");
+  Collections.shuffle(deck);
+  for (int i = 0; i < 5 && !deck.isEmpty(); i++) {
+   System.out.println(deck.remove(0)); // Remove and print
+  }
+ }
 }
