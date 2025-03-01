@@ -46,6 +46,29 @@ class Main {
      deck.sameCard(suit);
      break;
 
+    case 5: // To compare 2 cards by rank and suit
+     System.out.print("Enter first card rank: ");
+     String rank1 = scanner.nextLine();
+     System.out.print("Enter first card suit: ");
+     String suit1 = scanner.nextLine();
+     System.out.print("Enter second card rank: ");
+     String rank2 = scanner.nextLine();
+     System.out.print("Enter second card suit: ");
+     String suit2 = scanner.nextLine();
+
+     Card card1 = new Card(rank1, suit1);
+     Card card2 = new Card(rank2, suit2);
+     deck.compareCard(card1, card2);
+     break;
+
+    case 6: // Find a card using rank and suit
+     System.out.print("Enter rank of card to search: ");
+     String searchRank = scanner.nextLine();
+     System.out.print("Enter suit of card to search: ");
+     String searchSuit = scanner.nextLine();
+     deck.findCard(searchRank, searchSuit);
+     break;
+
     default: // Default case
      System.out.println("Invalid choice! Please enter a valid option.");
    }
