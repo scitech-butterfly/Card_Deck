@@ -35,8 +35,17 @@ class Deck {
   if (index >= 1 && index <= deck.size()) {
    System.out.println(deck.get(index - 1));
   } else {
-   System.out.println("Invalid index! Please choose between 1 and " + (deck.size()));
+   System.out.println("Invalid position! Please choose between 1 and " + (deck.size()));
   }
  }
 
+ // Find cards of the same suit
+ public void sameCard(String suit) {
+  System.out.println("Cards with suit " + suit + ":");
+  for (Card card : deck) {
+   if (card.suit.equalsIgnoreCase(suit)) {
+    System.out.println(card);
+   }
+  }
+ }
 }
