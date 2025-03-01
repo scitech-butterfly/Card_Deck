@@ -48,4 +48,13 @@ class Deck {
    }
   }
  }
+
+ // Compare two cards if they have the same rank
+ public void compareCard(Card card1, Card card2) {
+  if (card1.rank.equals(card2.rank)) {
+   System.out.println("Both cards have the same rank: " + card1.rank);
+  } else {
+   System.out.println("The cards have different ranks.");
+  }
+ }
 }
