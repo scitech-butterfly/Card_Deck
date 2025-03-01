@@ -60,15 +60,15 @@ class Deck {
  }
 
  // Search for a specific card
- public boolean findCard(String rank, String suit) {
-  for (Card card : deck) {
+ public void findCard(String rank, String suit) {
+  for (int i = 0; i < deck.size(); i++) {
+   Card card = deck.get(i);
    if (card.rank.equalsIgnoreCase(rank) && card.suit.equalsIgnoreCase(suit)) {
-    System.out.println("Card found: " + card);
-    return true;
+    System.out.println("Card found at position: " + i + 1);
+    return;
    }
   }
   System.out.println("Card not found!");
-  return false;
  }
 
  // Deal 5 random cards from the deck

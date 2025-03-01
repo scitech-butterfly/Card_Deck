@@ -13,40 +13,52 @@ class Main {
   int choice;
 
   // Display Menu to User
-  do {
+  while (true) {
    System.out.println("\n===== Card Deck Menu =====");
-   System.out.println("1. Print Deck");
-   System.out.println("2. Print a Specific Card");
-   System.out.println("3. Find Cards of Same Suit");
-   System.out.println("4. Compare Two Cards");
-   System.out.println("5. Search for a Card");
-   System.out.println("6. Deal 5 Random Cards");
-   System.out.println("7. Shuffle Deck");
+   System.out.println("1. Create Deck");
+   System.out.println("2. Print Deck");
+   System.out.println("3. Print a Specific Card");
+   System.out.println("4. Find Cards of Same Suit");
+   System.out.println("5. Compare Two Cards");
+   System.out.println("6. Search for a Card");
+   System.out.println("7. Deal 5 Random Cards");
+   System.out.println("8. Shuffle Deck");
    System.out.println("0. Exit");
    System.out.print("Enter your choice: ");
 
    choice = scanner.nextInt(); // Take integer input for user choice
    scanner.nextLine(); // Consume newline character
 
+   // Exit the program if choice is 0
+   if (choice == 0) {
+    System.out.println("Exiting the program...");
+    break;
+   }
+
    switch (choice) {
-    case 1: // Print the entire deck
-     System.out.println("\n----- Printing Deck -----");
+    case 1:
+     System.out.println("\n-----Creating Deck-----");
+     deck.createDeck();
+     break;
+
+    case 2: // Print the entire deck
+     System.out.println("----- Printing Deck -----");
      deck.printDeck();
      break;
 
-    case 2: // Print a specific card
+    case 3: // Print a specific card
      System.out.print("Enter position (1-52) of the card: ");
      int index = scanner.nextInt();
      deck.printCard(index);
      break;
 
-    case 3: // Find a card of the same suit
+    case 4: // Find a card of the same suit
      System.out.print("Enter suit (Clubs, Diamonds, Hearts, Spades): ");
      String suit = scanner.nextLine();
      deck.sameCard(suit);
      break;
 
-    case 4: // To compare 2 cards by rank and suit
+    case 5: // To compare 2 cards by rank and suit
      System.out.print("Enter first card rank: ");
      String rank1 = scanner.nextLine();
      System.out.print("Enter first card suit: ");
@@ -61,7 +73,7 @@ class Main {
      deck.compareCard(card1, card2);
      break;
 
-    case 5: // Find a card using rank and suit
+    case 6: // Find a card using rank and suit
      System.out.print("Enter rank of card to search: ");
      String searchRank = scanner.nextLine();
      System.out.print("Enter suit of card to search: ");
@@ -69,11 +81,11 @@ class Main {
      deck.findCard(searchRank, searchSuit);
      break;
 
-    case 6: // To deal 5 random cards
+    case 7: // To deal 5 random cards
      deck.dealCard();
      break;
 
-    case 7: // To shuffle the deck
+    case 8: // To shuffle the deck
      System.out.println("\n----- Shuffling Deck -----");
      deck.shuffleDeck();
      break;
@@ -82,6 +94,8 @@ class Main {
      System.out.println("Invalid choice! Please enter a valid option.");
    }
 
-  } while (choice != 0);
+  }
+
+  scanner.close();
  }
 }
