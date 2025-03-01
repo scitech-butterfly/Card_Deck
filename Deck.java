@@ -79,4 +79,9 @@ class Deck {
    System.out.println(deck.remove(0)); // Remove and print
   }
  }
+
+ // Method to shuffle the deck
+ public void shuffleDeck() {
+  Collections.shuffle(deck);
+ }
 }
