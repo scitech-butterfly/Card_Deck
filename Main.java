@@ -4,7 +4,7 @@
 // PRN: 23070126057
 // Batch: AIML A3
 
-import java.util.Scanner;
+import java.util.*;
 
 class Main {
  public static void main(String[] args) {
@@ -46,7 +46,7 @@ class Main {
      deck.sameCard(suit);
      break;
 
-    case 5: // To compare 2 cards by rank and suit
+    case 4: // To compare 2 cards by rank and suit
      System.out.print("Enter first card rank: ");
      String rank1 = scanner.nextLine();
      System.out.print("Enter first card suit: ");
@@ -61,12 +61,21 @@ class Main {
      deck.compareCard(card1, card2);
      break;
 
-    case 6: // Find a card using rank and suit
+    case 5: // Find a card using rank and suit
      System.out.print("Enter rank of card to search: ");
      String searchRank = scanner.nextLine();
      System.out.print("Enter suit of card to search: ");
      String searchSuit = scanner.nextLine();
      deck.findCard(searchRank, searchSuit);
+     break;
+
+    case 6: // To deal 5 random cards
+     deck.dealCard();
+     break;
+
+    case 7: // To shuffle the deck
+     System.out.println("\n----- Shuffling Deck -----");
+     deck.shuffleDeck();
      break;
 
     default: // Default case
