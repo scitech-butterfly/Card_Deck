@@ -34,6 +34,18 @@ class Main {
      deck.printDeck();
      break;
 
+    case 2: // Print a specific card
+     System.out.print("Enter position (1-52) of the card: ");
+     int index = scanner.nextInt();
+     deck.printCard(index);
+     break;
+
+    case 3: // Find a card of the same suit
+     System.out.print("Enter suit (Clubs, Diamonds, Hearts, Spades): ");
+     String suit = scanner.nextLine();
+     deck.sameCard(suit);
+     break;
+
     default: // Default case
      System.out.println("Invalid choice! Please enter a valid option.");
    }
